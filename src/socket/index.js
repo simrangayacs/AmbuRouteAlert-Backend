@@ -4,6 +4,7 @@ export function configureSocket(io) {
 
     socket.on('join.trip', tripId => socket.join(`trip:${tripId}`));
     socket.on('join.sector', sector => socket.join(`sector:${sector}`));
+    socket.on('join.officer', officerUserId => socket.join(`officer:${officerUserId}`));
 
     socket.on('disconnect', () => console.log('[Socket] disconnected', socket.id));
   });
